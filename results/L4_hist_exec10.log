@@ -1,0 +1,95 @@
+difficulty: Difficulty(clearance=0.001, jitter=0.03, block_yaw=0.2, grasp_dx=0.01, grasp_dy=0.005, grasp_dz_lo=0.03, grasp_dz_hi=0.04)
+policy: chunk 10, history lags [5, 10, 15] frames
+ep   0 seed 10000: SUCCESS  depth   60.2 mm  tip   0.7 mm  max lift block  4.3 cm peg 15.4 cm  (10 s)
+        L: closest approach 1 mm (horiz 0, vert +0); fingers closed at step 4 with the pinch point 0 mm off horizontally, +0 mm vertically
+        R: closest approach 3 mm (horiz 2, vert -3); fingers closed at step 4 with the pinch point 1 mm off horizontally, -6 mm vertically
+ep   1 seed 10001: SUCCESS  depth   60.1 mm  tip   2.5 mm  max lift block  4.3 cm peg 15.3 cm  (10 s)
+        L: closest approach 1 mm (horiz 1, vert +1); fingers closed at step 4 with the pinch point 1 mm off horizontally, +1 mm vertically
+        R: closest approach 2 mm (horiz 1, vert -1); fingers closed at step 4 with the pinch point 2 mm off horizontally, -5 mm vertically
+ep   2 seed 10002: SUCCESS  depth   60.2 mm  tip   0.9 mm  max lift block  4.4 cm peg 15.4 cm  (9 s)
+        L: closest approach 0 mm (horiz 0, vert +0); fingers closed at step 4 with the pinch point 0 mm off horizontally, +0 mm vertically
+        R: closest approach 4 mm (horiz 3, vert -3); fingers closed at step 4 with the pinch point 4 mm off horizontally, -7 mm vertically
+ep   3 seed 10003: SUCCESS  depth   60.2 mm  tip   1.0 mm  max lift block  4.3 cm peg 14.8 cm  (11 s)
+        L: closest approach 1 mm (horiz 1, vert +0); fingers closed at step 4 with the pinch point 1 mm off horizontally, +0 mm vertically
+        R: closest approach 5 mm (horiz 4, vert -2); fingers closed at step 4 with the pinch point 4 mm off horizontally, -2 mm vertically
+ep   4 seed 10004: SUCCESS  depth   60.1 mm  tip   1.7 mm  max lift block  4.4 cm peg 15.3 cm  (10 s)
+        L: closest approach 1 mm (horiz 1, vert +0); fingers closed at step 4 with the pinch point 1 mm off horizontally, +0 mm vertically
+        R: closest approach 2 mm (horiz 1, vert -2); fingers closed at step 4 with the pinch point 4 mm off horizontally, -5 mm vertically
+ep   5 seed 10005: SUCCESS  depth   60.2 mm  tip   1.1 mm  max lift block  4.3 cm peg 15.1 cm  (10 s)
+        L: closest approach 2 mm (horiz 1, vert +1); fingers closed at step 4 with the pinch point 1 mm off horizontally, +1 mm vertically
+        R: closest approach 5 mm (horiz 5, vert +0); fingers closed at step 4 with the pinch point 5 mm off horizontally, -4 mm vertically
+ep   6 seed 10006: SUCCESS  depth   59.9 mm  tip   3.6 mm  max lift block  4.3 cm peg 15.1 cm  (10 s)
+        L: closest approach 2 mm (horiz 1, vert +1); fingers closed at step 4 with the pinch point 1 mm off horizontally, +1 mm vertically
+        R: closest approach 3 mm (horiz 3, vert +0); fingers closed at step 4 with the pinch point 4 mm off horizontally, -3 mm vertically
+ep   7 seed 10007: SUCCESS  depth   60.1 mm  tip   1.2 mm  max lift block  4.4 cm peg 15.1 cm  (10 s)
+        L: closest approach 1 mm (horiz 0, vert +1); fingers closed at step 4 with the pinch point 0 mm off horizontally, +1 mm vertically
+        R: closest approach 2 mm (horiz 2, vert -0); fingers closed at step 4 with the pinch point 3 mm off horizontally, -3 mm vertically
+ep   8 seed 10008: SUCCESS  depth   60.0 mm  tip   2.9 mm  max lift block  4.4 cm peg 14.9 cm  (10 s)
+        L: closest approach 1 mm (horiz 1, vert +1); fingers closed at step 4 with the pinch point 1 mm off horizontally, +1 mm vertically
+        R: closest approach 1 mm (horiz 1, vert -0); fingers closed at step 4 with the pinch point 4 mm off horizontally, -2 mm vertically
+ep   9 seed 10009: SUCCESS  depth   60.2 mm  tip   1.1 mm  max lift block  4.4 cm peg 15.1 cm  (10 s)
+        L: closest approach 1 mm (horiz 1, vert +0); fingers closed at step 4 with the pinch point 1 mm off horizontally, +0 mm vertically
+        R: closest approach 3 mm (horiz 3, vert -1); fingers closed at step 4 with the pinch point 4 mm off horizontally, -3 mm vertically
+ep  10 seed 10010: SUCCESS  depth   59.4 mm  tip   2.4 mm  max lift block  4.3 cm peg 15.0 cm  (10 s)
+        L: closest approach 2 mm (horiz 0, vert +2); fingers closed at step 4 with the pinch point 1 mm off horizontally, +2 mm vertically
+        R: closest approach 4 mm (horiz 4, vert -1); fingers closed at step 4 with the pinch point 5 mm off horizontally, -3 mm vertically
+ep  11 seed 10011: SUCCESS  depth   60.1 mm  tip   1.8 mm  max lift block  4.3 cm peg 15.3 cm  (10 s)
+        L: closest approach 1 mm (horiz 1, vert +1); fingers closed at step 4 with the pinch point 1 mm off horizontally, +1 mm vertically
+        R: closest approach 3 mm (horiz 3, vert -1); fingers closed at step 4 with the pinch point 3 mm off horizontally, -5 mm vertically
+ep  12 seed 10012: SUCCESS  depth   60.1 mm  tip   0.8 mm  max lift block  4.3 cm peg 15.1 cm  (10 s)
+        L: closest approach 1 mm (horiz 0, vert +1); fingers closed at step 4 with the pinch point 0 mm off horizontally, +1 mm vertically
+        R: closest approach 4 mm (horiz 4, vert +1); fingers closed at step 4 with the pinch point 4 mm off horizontally, -4 mm vertically
+ep  13 seed 10013: SUCCESS  depth   60.2 mm  tip   0.8 mm  max lift block  4.3 cm peg 15.2 cm  (10 s)
+        L: closest approach 1 mm (horiz 0, vert +1); fingers closed at step 4 with the pinch point 0 mm off horizontally, +1 mm vertically
+        R: closest approach 3 mm (horiz 3, vert -1); fingers closed at step 4 with the pinch point 3 mm off horizontally, -4 mm vertically
+ep  14 seed 10014: SUCCESS  depth   60.2 mm  tip   1.0 mm  max lift block  4.3 cm peg 14.9 cm  (10 s)
+        L: closest approach 1 mm (horiz 1, vert +1); fingers closed at step 4 with the pinch point 1 mm off horizontally, +1 mm vertically
+        R: closest approach 5 mm (horiz 5, vert +1); fingers closed at step 4 with the pinch point 6 mm off horizontally, -3 mm vertically
+ep  15 seed 10015: SUCCESS  depth   60.1 mm  tip   1.6 mm  max lift block  4.3 cm peg 15.5 cm  (11 s)
+        L: closest approach 1 mm (horiz 1, vert +1); fingers closed at step 4 with the pinch point 1 mm off horizontally, +1 mm vertically
+        R: closest approach 4 mm (horiz 3, vert -3); fingers closed at step 4 with the pinch point 6 mm off horizontally, -6 mm vertically
+ep  16 seed 10016: SUCCESS  depth   60.1 mm  tip   1.3 mm  max lift block  4.4 cm peg 15.7 cm  (10 s)
+        L: closest approach 1 mm (horiz 1, vert +0); fingers closed at step 4 with the pinch point 1 mm off horizontally, +0 mm vertically
+        R: closest approach 5 mm (horiz 2, vert -5); fingers closed at step 4 with the pinch point 6 mm off horizontally, -6 mm vertically
+ep  17 seed 10017: SUCCESS  depth   60.2 mm  tip   0.8 mm  max lift block  4.4 cm peg 15.3 cm  (10 s)
+        L: closest approach 0 mm (horiz 0, vert +0); fingers closed at step 4 with the pinch point 1 mm off horizontally, +0 mm vertically
+        R: closest approach 3 mm (horiz 2, vert -2); fingers closed at step 4 with the pinch point 3 mm off horizontally, -6 mm vertically
+ep  18 seed 10018: SUCCESS  depth   59.9 mm  tip   3.0 mm  max lift block  4.4 cm peg 14.5 cm  (10 s)
+        L: closest approach 1 mm (horiz 1, vert +1); fingers closed at step 5 with the pinch point 1 mm off horizontally, +1 mm vertically
+        R: closest approach 4 mm (horiz 3, vert +3); fingers closed at step 4 with the pinch point 9 mm off horizontally, +1 mm vertically
+ep  19 seed 10019: SUCCESS  depth   60.2 mm  tip   1.0 mm  max lift block  4.4 cm peg 15.1 cm  (10 s)
+        L: closest approach 2 mm (horiz 2, vert +1); fingers closed at step 5 with the pinch point 2 mm off horizontally, +1 mm vertically
+        R: closest approach 1 mm (horiz 1, vert -1); fingers closed at step 5 with the pinch point 3 mm off horizontally, -1 mm vertically
+ep  20 seed 10020: SUCCESS  depth   60.2 mm  tip   0.8 mm  max lift block  4.4 cm peg 15.5 cm  (10 s)
+        L: closest approach 1 mm (horiz 1, vert +0); fingers closed at step 4 with the pinch point 1 mm off horizontally, +0 mm vertically
+        R: closest approach 3 mm (horiz 3, vert -2); fingers closed at step 4 with the pinch point 5 mm off horizontally, -5 mm vertically
+ep  21 seed 10021: SUCCESS  depth   60.1 mm  tip   1.7 mm  max lift block  4.3 cm peg 15.0 cm  (10 s)
+        L: closest approach 1 mm (horiz 0, vert +1); fingers closed at step 4 with the pinch point 1 mm off horizontally, +1 mm vertically
+        R: closest approach 5 mm (horiz 5, vert -2); fingers closed at step 4 with the pinch point 5 mm off horizontally, -4 mm vertically
+ep  22 seed 10022: SUCCESS  depth   60.1 mm  tip   1.2 mm  max lift block  4.3 cm peg 15.1 cm  (10 s)
+        L: closest approach 1 mm (horiz 0, vert +1); fingers closed at step 4 with the pinch point 0 mm off horizontally, +1 mm vertically
+        R: closest approach 5 mm (horiz 5, vert -0); fingers closed at step 4 with the pinch point 4 mm off horizontally, -4 mm vertically
+ep  23 seed 10023: SUCCESS  depth   60.1 mm  tip   2.1 mm  max lift block  4.3 cm peg 14.8 cm  (10 s)
+        L: closest approach 1 mm (horiz 0, vert +1); fingers closed at step 4 with the pinch point 0 mm off horizontally, +1 mm vertically
+        R: closest approach 3 mm (horiz 3, vert +1); fingers closed at step 4 with the pinch point 2 mm off horizontally, -2 mm vertically
+ep  24 seed 10024: SUCCESS  depth   59.6 mm  tip   3.0 mm  max lift block  4.3 cm peg 15.4 cm  (10 s)
+        L: closest approach 2 mm (horiz 1, vert +1); fingers closed at step 5 with the pinch point 2 mm off horizontally, +1 mm vertically
+        R: closest approach 5 mm (horiz 4, vert -3); fingers closed at step 4 with the pinch point 4 mm off horizontally, -6 mm vertically
+ep  25 seed 10025: SUCCESS  depth   60.2 mm  tip   1.1 mm  max lift block  4.3 cm peg 14.8 cm  (10 s)
+        L: closest approach 1 mm (horiz 1, vert +1); fingers closed at step 4 with the pinch point 1 mm off horizontally, +1 mm vertically
+        R: closest approach 8 mm (horiz 8, vert +2); fingers closed at step 4 with the pinch point 10 mm off horizontally, -1 mm vertically
+ep  26 seed 10026: SUCCESS  depth   60.2 mm  tip   1.0 mm  max lift block  4.4 cm peg 15.2 cm  (10 s)
+        L: closest approach 1 mm (horiz 0, vert +0); fingers closed at step 4 with the pinch point 1 mm off horizontally, +0 mm vertically
+        R: closest approach 4 mm (horiz 4, vert -1); fingers closed at step 4 with the pinch point 5 mm off horizontally, -5 mm vertically
+ep  27 seed 10027: SUCCESS  depth   60.2 mm  tip   1.0 mm  max lift block  4.4 cm peg 15.3 cm  (11 s)
+        L: closest approach 1 mm (horiz 0, vert +0); fingers closed at step 4 with the pinch point 1 mm off horizontally, +0 mm vertically
+        R: closest approach 4 mm (horiz 4, vert -2); fingers closed at step 4 with the pinch point 5 mm off horizontally, -6 mm vertically
+ep  28 seed 10028: SUCCESS  depth   60.1 mm  tip   1.3 mm  max lift block  4.3 cm peg 15.7 cm  (10 s)
+        L: closest approach 1 mm (horiz 1, vert +1); fingers closed at step 4 with the pinch point 1 mm off horizontally, +1 mm vertically
+        R: closest approach 5 mm (horiz 1, vert -5); fingers closed at step 4 with the pinch point 2 mm off horizontally, -8 mm vertically
+ep  29 seed 10029: SUCCESS  depth   60.2 mm  tip   0.9 mm  max lift block  4.5 cm peg 15.0 cm  (10 s)
+        L: closest approach 2 mm (horiz 2, vert -0); fingers closed at step 4 with the pinch point 2 mm off horizontally, -0 mm vertically
+        R: closest approach 2 mm (horiz 2, vert -1); fingers closed at step 4 with the pinch point 2 mm off horizontally, -1 mm vertically
+
+30/30 successful (100%)
+results written to ../results/L4_hist_exec10.json

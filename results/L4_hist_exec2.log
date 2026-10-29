@@ -1,0 +1,118 @@
+difficulty: Difficulty(clearance=0.001, jitter=0.03, block_yaw=0.2, grasp_dx=0.01, grasp_dy=0.005, grasp_dz_lo=0.03, grasp_dz_hi=0.04)
+policy: chunk 10, history lags [5, 10, 15] frames
+ep   0 seed 10000: SUCCESS  depth   60.2 mm  tip   0.3 mm  max lift block  4.5 cm peg 15.7 cm  (3 s)
+        L: closest approach 1 mm (horiz 0, vert -1); fingers closed at step 22 with the pinch point 0 mm off horizontally, -1 mm vertically
+        R: closest approach 10 mm (horiz 8, vert -6); fingers closed at step 22 with the pinch point 10 mm off horizontally, -8 mm vertically
+ep   1 seed 10001: FAIL     depth  -10.0 mm  tip 107.3 mm  max lift block  4.4 cm peg 14.8 cm  -> other (peg near the block but not in the hole)  (2 s)
+        peg: 23.5 mm off and 11 deg tilted when the tip reached the hole rim; peak peg speed 0.7 m/s
+        L: closest approach 2 mm (horiz 2, vert -0); fingers closed at step 32 with the pinch point 3 mm off horizontally, -0 mm vertically
+        R: closest approach 2 mm (horiz 2, vert -1); fingers closed at step 32 with the pinch point 2 mm off horizontally, -1 mm vertically
+ep   2 seed 10002: SUCCESS  depth   60.2 mm  tip   0.3 mm  max lift block  4.5 cm peg 15.9 cm  (3 s)
+        L: closest approach 1 mm (horiz 0, vert +1); fingers closed at step 22 with the pinch point 1 mm off horizontally, -1 mm vertically
+        R: closest approach 6 mm (horiz 6, vert +1); fingers closed at step 22 with the pinch point 7 mm off horizontally, -10 mm vertically
+ep   3 seed 10003: FAIL     depth  898.9 mm  tip 818.6 mm  max lift block  4.5 cm peg 15.0 cm  -> peg lost (fell off the table / flung away)  (2 s)
+        peg: 3.1 mm off and 0 deg tilted when the tip reached the hole rim; peg left the table at step 235 (right fingers CLOSED, speed 1.1 m/s, hand 150 mm above the block); peak peg speed 3.9 m/s
+        L: closest approach 2 mm (horiz 2, vert +0); fingers closed at step 24 with the pinch point 2 mm off horizontally, -1 mm vertically
+        R: closest approach 7 mm (horiz 7, vert +1); fingers closed at step 24 with the pinch point 10 mm off horizontally, -2 mm vertically
+ep   4 seed 10004: FAIL     depth   -9.0 mm  tip 118.5 mm  max lift block  4.5 cm peg 15.7 cm  -> other (peg near the block but not in the hole)  (2 s)
+        peg: 6.0 mm off and 0 deg tilted when the tip reached the hole rim; peak peg speed 0.5 m/s
+        L: closest approach 2 mm (horiz 2, vert -1); fingers closed at step 23 with the pinch point 2 mm off horizontally, -1 mm vertically
+        R: closest approach 3 mm (horiz 1, vert -3); fingers closed at step 23 with the pinch point 2 mm off horizontally, -8 mm vertically
+ep   5 seed 10005: SUCCESS  depth   60.2 mm  tip   0.7 mm  max lift block  4.5 cm peg 15.7 cm  (3 s)
+        L: closest approach 1 mm (horiz 1, vert -0); fingers closed at step 23 with the pinch point 1 mm off horizontally, -1 mm vertically
+        R: closest approach 6 mm (horiz 3, vert -5); fingers closed at step 23 with the pinch point 6 mm off horizontally, -8 mm vertically
+ep   6 seed 10006: FAIL     depth  -12.0 mm  tip   8.6 mm  max lift block  4.6 cm peg 15.6 cm  -> peg stuck on the block's rim (not entered)  (2 s)
+        peg: never reached the hole rim; peak peg speed 0.2 m/s
+        L: closest approach 2 mm (horiz 2, vert +1); fingers closed at step 22 with the pinch point 2 mm off horizontally, -1 mm vertically
+        R: closest approach 9 mm (horiz 8, vert +3); fingers closed at step 22 with the pinch point 10 mm off horizontally, -7 mm vertically
+ep   7 seed 10007: FAIL     depth  -10.8 mm  tip   8.4 mm  max lift block  4.5 cm peg 15.6 cm  -> peg stuck on the block's rim (not entered)  (2 s)
+        peg: never reached the hole rim; peak peg speed 0.2 m/s
+        L: closest approach 3 mm (horiz 3, vert -1); fingers closed at step 28 with the pinch point 3 mm off horizontally, -1 mm vertically
+        R: closest approach 7 mm (horiz 6, vert +2); fingers closed at step 28 with the pinch point 7 mm off horizontally, -4 mm vertically
+ep   8 seed 10008: FAIL     depth   -7.9 mm  tip 118.9 mm  max lift block  4.6 cm peg 15.6 cm  -> other (peg near the block but not in the hole)  (2 s)
+        peg: 3.0 mm off and 0 deg tilted when the tip reached the hole rim; peak peg speed 0.5 m/s
+        L: closest approach 2 mm (horiz 2, vert +1); fingers closed at step 23 with the pinch point 2 mm off horizontally, -2 mm vertically
+        R: closest approach 3 mm (horiz 1, vert -2); fingers closed at step 23 with the pinch point 3 mm off horizontally, -7 mm vertically
+ep   9 seed 10009: FAIL     depth   -7.3 mm  tip 125.9 mm  max lift block  4.7 cm peg 15.5 cm  -> other (peg near the block but not in the hole)  (2 s)
+        peg: 5.5 mm off and 2 deg tilted when the tip reached the hole rim; peak peg speed 0.6 m/s
+        L: closest approach 2 mm (horiz 2, vert -0); fingers closed at step 24 with the pinch point 2 mm off horizontally, -3 mm vertically
+        R: closest approach 4 mm (horiz 3, vert -3); fingers closed at step 24 with the pinch point 9 mm off horizontally, -5 mm vertically
+ep  10 seed 10010: SUCCESS  depth   60.2 mm  tip   0.4 mm  max lift block  4.4 cm peg 15.2 cm  (3 s)
+        L: closest approach 1 mm (horiz 0, vert +1); fingers closed at step 23 with the pinch point 1 mm off horizontally, +1 mm vertically
+        R: closest approach 4 mm (horiz 4, vert -1); fingers closed at step 22 with the pinch point 6 mm off horizontally, -4 mm vertically
+ep  11 seed 10011: FAIL     depth  899.7 mm  tip 850.2 mm  max lift block  4.6 cm peg 15.7 cm  -> peg lost (fell off the table / flung away)  (2 s)
+        peg: 4.1 mm off and 1 deg tilted when the tip reached the hole rim; peg left the table at step 126 (right fingers CLOSED, speed 1.1 m/s, hand 169 mm above the block); peak peg speed 3.7 m/s
+        L: closest approach 3 mm (horiz 3, vert -1); fingers closed at step 24 with the pinch point 3 mm off horizontally, -2 mm vertically
+        R: closest approach 4 mm (horiz 4, vert +0); fingers closed at step 24 with the pinch point 4 mm off horizontally, -7 mm vertically
+ep  12 seed 10012: FAIL     depth   -2.6 mm  tip  24.4 mm  max lift block  4.5 cm peg 15.2 cm  -> peg stuck on the block's rim (not entered)  (2 s)
+        peg: 21.5 mm off and 10 deg tilted when the tip reached the hole rim; peak peg speed 0.2 m/s
+        L: closest approach 2 mm (horiz 2, vert -0); fingers closed at step 25 with the pinch point 2 mm off horizontally, -1 mm vertically
+        R: closest approach 4 mm (horiz 4, vert +1); fingers closed at step 25 with the pinch point 10 mm off horizontally, -2 mm vertically
+ep  13 seed 10013: SUCCESS  depth   60.2 mm  tip   0.1 mm  max lift block  4.5 cm peg 15.3 cm  (2 s)
+        L: closest approach 1 mm (horiz 1, vert -1); fingers closed at step 24 with the pinch point 1 mm off horizontally, -1 mm vertically
+        R: closest approach 3 mm (horiz 1, vert -3); fingers closed at step 24 with the pinch point 5 mm off horizontally, -5 mm vertically
+ep  14 seed 10014: FAIL     depth  -15.3 mm  tip  15.4 mm  max lift block  4.4 cm peg 14.8 cm  -> peg stuck on the block's rim (not entered)  (2 s)
+        peg: 21.7 mm off and 10 deg tilted when the tip reached the hole rim; peak peg speed 0.6 m/s
+        L: closest approach 1 mm (horiz 1, vert -0); fingers closed at step 23 with the pinch point 1 mm off horizontally, -0 mm vertically
+        R: closest approach 1 mm (horiz 1, vert -1); fingers closed at step 23 with the pinch point 1 mm off horizontally, -3 mm vertically
+ep  15 seed 10015: SUCCESS  depth   60.1 mm  tip   1.3 mm  max lift block  4.5 cm peg 15.3 cm  (3 s)
+        L: closest approach 1 mm (horiz 1, vert -0); fingers closed at step 22 with the pinch point 1 mm off horizontally, -0 mm vertically
+        R: closest approach 11 mm (horiz 11, vert -2); fingers closed at step 22 with the pinch point 18 mm off horizontally, -5 mm vertically
+ep  16 seed 10016: FAIL     depth  -34.7 mm  tip   6.6 mm  max lift block  4.6 cm peg 15.8 cm  -> peg stuck on the block's rim (not entered)  (2 s)
+        peg: never reached the hole rim; peak peg speed 0.2 m/s
+        L: closest approach 1 mm (horiz 1, vert -0); fingers closed at step 25 with the pinch point 2 mm off horizontally, -1 mm vertically
+        R: closest approach 4 mm (horiz 4, vert -0); fingers closed at step 24 with the pinch point 6 mm off horizontally, -8 mm vertically
+ep  17 seed 10017: FAIL     depth  -11.6 mm  tip   8.4 mm  max lift block  4.5 cm peg 15.5 cm  -> peg stuck on the block's rim (not entered)  (2 s)
+        peg: never reached the hole rim; peak peg speed 0.2 m/s
+        L: closest approach 1 mm (horiz 1, vert -0); fingers closed at step 23 with the pinch point 1 mm off horizontally, -1 mm vertically
+        R: closest approach 6 mm (horiz 6, vert +0); fingers closed at step 23 with the pinch point 7 mm off horizontally, -6 mm vertically
+ep  18 seed 10018: FAIL     depth   -9.3 mm  tip 108.2 mm  max lift block  4.5 cm peg 15.0 cm  -> other (peg near the block but not in the hole)  (2 s)
+        peg: 22.8 mm off and 12 deg tilted when the tip reached the hole rim; peak peg speed 0.8 m/s
+        L: closest approach 2 mm (horiz 1, vert +1); fingers closed at step 23 with the pinch point 2 mm off horizontally, -1 mm vertically
+        R: closest approach 8 mm (horiz 7, vert -1); fingers closed at step 23 with the pinch point 10 mm off horizontally, -2 mm vertically
+ep  19 seed 10019: SUCCESS  depth   60.2 mm  tip   0.3 mm  max lift block  4.6 cm peg 15.5 cm  (3 s)
+        L: closest approach 1 mm (horiz 1, vert +1); fingers closed at step 23 with the pinch point 1 mm off horizontally, -1 mm vertically
+        R: closest approach 3 mm (horiz 2, vert -2); fingers closed at step 23 with the pinch point 3 mm off horizontally, -6 mm vertically
+ep  20 seed 10020: FAIL     depth  -12.5 mm  tip   8.0 mm  max lift block  4.4 cm peg 15.3 cm  -> peg stuck on the block's rim (not entered)  (2 s)
+        peg: never reached the hole rim; peak peg speed 0.1 m/s
+        L: closest approach 1 mm (horiz 1, vert +0); fingers closed at step 23 with the pinch point 1 mm off horizontally, +0 mm vertically
+        R: closest approach 5 mm (horiz 5, vert -1); fingers closed at step 22 with the pinch point 3 mm off horizontally, -5 mm vertically
+ep  21 seed 10021: FAIL     depth   -8.0 mm  tip 118.1 mm  max lift block  4.6 cm peg 15.5 cm  -> other (peg near the block but not in the hole)  (2 s)
+        peg: 5.5 mm off and 1 deg tilted when the tip reached the hole rim; peak peg speed 0.5 m/s
+        L: closest approach 1 mm (horiz 1, vert +0); fingers closed at step 24 with the pinch point 1 mm off horizontally, -2 mm vertically
+        R: closest approach 5 mm (horiz 3, vert -4); fingers closed at step 23 with the pinch point 8 mm off horizontally, -6 mm vertically
+ep  22 seed 10022: FAIL     depth  -14.2 mm  tip   8.0 mm  max lift block  4.6 cm peg 15.8 cm  -> peg stuck on the block's rim (not entered)  (2 s)
+        peg: never reached the hole rim; peak peg speed 0.1 m/s
+        L: closest approach 3 mm (horiz 3, vert -1); fingers closed at step 23 with the pinch point 3 mm off horizontally, -2 mm vertically
+        R: closest approach 1 mm (horiz 1, vert -0); fingers closed at step 23 with the pinch point 1 mm off horizontally, -8 mm vertically
+ep  23 seed 10023: FAIL     depth  -32.2 mm  tip   5.5 mm  max lift block  4.5 cm peg 15.5 cm  -> peg stuck on the block's rim (not entered)  (2 s)
+        peg: never reached the hole rim; peak peg speed 0.2 m/s
+        L: closest approach 2 mm (horiz 2, vert +1); fingers closed at step 23 with the pinch point 2 mm off horizontally, -1 mm vertically
+        R: closest approach 8 mm (horiz 8, vert +1); fingers closed at step 23 with the pinch point 14 mm off horizontally, -4 mm vertically
+ep  24 seed 10024: SUCCESS  depth   60.2 mm  tip   0.5 mm  max lift block  4.6 cm peg 15.8 cm  (3 s)
+        L: closest approach 1 mm (horiz 1, vert -1); fingers closed at step 23 with the pinch point 1 mm off horizontally, -2 mm vertically
+        R: closest approach 4 mm (horiz 1, vert -3); fingers closed at step 23 with the pinch point 0 mm off horizontally, -9 mm vertically
+ep  25 seed 10025: SUCCESS  depth   60.2 mm  tip   0.7 mm  max lift block  4.6 cm peg 15.8 cm  (3 s)
+        L: closest approach 2 mm (horiz 2, vert +1); fingers closed at step 23 with the pinch point 2 mm off horizontally, -3 mm vertically
+        R: closest approach 7 mm (horiz 6, vert -4); fingers closed at step 23 with the pinch point 15 mm off horizontally, -8 mm vertically
+ep  26 seed 10026: FAIL     depth    0.3 mm  tip  12.3 mm  max lift block  4.8 cm peg 16.4 cm  -> peg stuck on the block's rim (not entered)  (3 s)
+        peg: 10.3 mm off and 0 deg tilted when the tip reached the hole rim; peak peg speed 0.2 m/s
+        L: closest approach 6 mm (horiz 5, vert +3); fingers closed at step 24 with the pinch point 5 mm off horizontally, -4 mm vertically
+        R: closest approach 7 mm (horiz 6, vert -4); fingers closed at step 24 with the pinch point 8 mm off horizontally, -14 mm vertically
+ep  27 seed 10027: FAIL     depth   -6.4 mm  tip 119.0 mm  max lift block  4.7 cm peg 16.0 cm  -> other (peg near the block but not in the hole)  (2 s)
+        peg: 4.2 mm off and 1 deg tilted when the tip reached the hole rim; peak peg speed 0.5 m/s
+        L: closest approach 2 mm (horiz 1, vert -2); fingers closed at step 25 with the pinch point 1 mm off horizontally, -3 mm vertically
+        R: closest approach 10 mm (horiz 10, vert -3); fingers closed at step 25 with the pinch point 11 mm off horizontally, -10 mm vertically
+ep  28 seed 10028: SUCCESS  depth   60.1 mm  tip   1.3 mm  max lift block  4.6 cm peg 16.1 cm  (2 s)
+        L: closest approach 2 mm (horiz 1, vert -1); fingers closed at step 28 with the pinch point 0 mm off horizontally, -2 mm vertically
+        R: closest approach 11 mm (horiz 11, vert +1); fingers closed at step 27 with the pinch point 12 mm off horizontally, -12 mm vertically
+ep  29 seed 10029: FAIL     depth  -31.7 mm  tip   8.8 mm  max lift block  4.7 cm peg 15.6 cm  -> peg stuck on the block's rim (not entered)  (2 s)
+        peg: never reached the hole rim; peak peg speed 0.2 m/s
+        L: closest approach 6 mm (horiz 5, vert -3); fingers closed at step 23 with the pinch point 6 mm off horizontally, -3 mm vertically
+        R: closest approach 3 mm (horiz 3, vert +0); fingers closed at step 22 with the pinch point 6 mm off horizontally, -6 mm vertically
+
+10/30 successful (33%)
+    7 x other (peg near the block but not in the hole)
+    2 x peg lost (fell off the table / flung away)
+   11 x peg stuck on the block's rim (not entered)
+results written to ../results/L4_hist_exec2.json

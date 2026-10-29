@@ -1,0 +1,12 @@
+venv/
+data/
+data_L1/
+data_L4/
+data_test/
+ckpt/
+log/
+build/
+install/
+__pycache__/
+*.pyc
+*.pt

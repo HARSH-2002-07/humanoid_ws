@@ -1,0 +1,212 @@
+<mujoco model="upper_body">
+  <compiler angle="radian" autolimits="true"/>
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic" impratio="10"/>
+  <visual>
+    <global offwidth="1280" offheight="960"/>
+    <quality shadowsize="2048"/>
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.6 0.75 0.9" rgb2="0.1 0.12 0.2" width="512" height="512"/>
+    <texture name="grid" type="2d" builtin="checker" rgb1="0.25 0.27 0.3" rgb2="0.3 0.32 0.35" width="300" height="300"/>
+    <material name="grid" texture="grid" texrepeat="6 6" reflectance="0.1"/>
+  </asset>
+
+  <default>
+    <default class="link_geom">
+      <geom type="capsule" rgba="0.6 0.65 0.75 1" density="500"/>
+    </default>
+    <default class="arm_joint">
+      <joint damping="1.0" armature="0.01"/>
+    </default>
+    <default class="wrist_joint">
+      <joint damping="0.2" armature="0.005"/>
+    </default>
+    <default class="finger_joint">
+      <joint damping="0.01" armature="0.002"/>
+    </default>
+    <default class="finger_geom">
+      <geom type="capsule" rgba="0.85 0.7 0.6 1" density="800" friction="2 0.1 0.01" condim="4"/>
+    </default>
+    <default class="shoulder"><position kp="150" kv="15" forcerange="-80 80" ctrlrange="-2.8 2.8"/></default>
+    <default class="elbow"><position kp="100" kv="10" forcerange="-60 60" ctrlrange="-2.4 0.05"/></default>
+    <default class="wrist"><position kp="20" kv="2" forcerange="-20 20" ctrlrange="-1.6 1.6"/></default>
+    <default class="finger_act"><position kp="3" kv="0.2" forcerange="-6 6"/></default>
+    <default class="thumb_act"><position kp="6" kv="0.4" forcerange="-12 12"/></default>  <!-- 2x a finger: balances two fingers -->
+  </default>
+
+  <worldbody>
+    <light pos="0.5 0 3" dir="0 0 -1" diffuse="0.8 0.8 0.8"/>
+    <geom name="floor" type="plane" size="3 3 0.1" material="grid"/>
+    <camera name="overview" pos="1.4 0 1.5" mode="targetbody" target="torso"/>
+
+    <!-- table -->
+    <body name="table" pos="0.55 0 0.4">
+      <geom name="table_top" type="box" size="0.25 0.45 0.4" rgba="0.55 0.45 0.35 1" friction="1 0.005 0.0001"/>
+    </body>
+
+    <!-- pedestal (visual only) -->
+    <geom type="box" pos="0 0 0.375" size="0.07 0.1 0.375" rgba="0.3 0.3 0.35 1" contype="0" conaffinity="0"/>
+
+    <!-- torso -->
+    <body name="torso" pos="0 0 1.0">
+      <geom name="torso_box" type="box" size="0.09 0.15 0.25" rgba="0.25 0.35 0.6 1"/>
+
+      <!-- head: pan/tilt, camera in the front. positive tilt = look down -->
+      <body name="head" pos="0 0 0.27" gravcomp="1">
+        <joint name="head_pan" axis="0 0 1" range="-1.2 1.2" damping="0.5" armature="0.005"/>
+        <joint name="head_tilt" axis="0 1 0" range="-0.6 0.8" damping="0.5" armature="0.005"/>
+        <geom type="capsule" fromto="0 0 -0.02 0 0 0.04" size="0.03" rgba="0.8 0.7 0.6 1" contype="0" conaffinity="0"/>
+        <geom type="sphere" pos="0 0 0.12" size="0.09" rgba="0.9 0.8 0.7 1" contype="0" conaffinity="0"/>
+        <geom type="sphere" pos="0.08 0.035 0.13" size="0.012" rgba="0.05 0.05 0.05 1" contype="0" conaffinity="0"/>
+        <geom type="sphere" pos="0.08 -0.035 0.13" size="0.012" rgba="0.05 0.05 0.05 1" contype="0" conaffinity="0"/>
+        <camera name="head_cam" pos="0.095 0 0.12" xyaxes="0 -1 0 0.848 0 0.530" fovy="50"/>
+      </body>
+
+      <body name="l_upper_arm" pos="0 0.24 0.1" gravcomp="1">
+        <joint name="l_sh_pitch" class="arm_joint" axis="0 1 0" range="-2.8 1.0"/>
+        <joint name="l_sh_roll" class="arm_joint" axis="1 0 0" range="-1.2 2.0"/>
+        <joint name="l_sh_yaw" class="arm_joint" axis="0 0 1" range="-1.5 1.5"/>
+        <geom type="sphere" size="0.045" contype="0" conaffinity="0" rgba="0.35 0.38 0.45 1"/>
+        <geom class="link_geom" fromto="0 0 0 0 0 -0.33" size="0.035"/>
+        <body name="l_forearm" pos="0 0 -0.33" gravcomp="1">
+          <joint name="l_elbow" class="arm_joint" axis="0 1 0" range="-2.4 0.05"/>
+          <geom type="sphere" size="0.038" contype="0" conaffinity="0" rgba="0.35 0.38 0.45 1"/>
+          <geom class="link_geom" fromto="0 0 0 0 0 -0.3" size="0.03"/>
+          <body name="l_hand" pos="0 0 -0.3" gravcomp="1">
+            <joint name="l_wrist_roll" class="wrist_joint" axis="0 0 1" range="-1.6 1.6"/>
+            <joint name="l_wrist_pitch" class="wrist_joint" axis="0 1 0" range="-1.0 1.0"/>
+            <joint name="l_wrist_dev" class="wrist_joint" axis="1 0 0" range="-1.2 1.2"/>
+            <geom name="l_palm" class="link_geom" type="box" pos="0 0 -0.03" size="0.02 0.045 0.03" rgba="0.85 0.7 0.6 1"/>
+            
+          <body name="l_index_prox" pos="0.012 0.045 -0.06" gravcomp="1">
+            <joint name="l_index_j1" class="finger_joint" axis="1 0 0" range="-1.6 0.0"/>
+            <geom class="finger_geom" fromto="0 0 0 0 0 -0.05" size="0.008"/>
+            <body name="l_index_dist" pos="0 0 -0.05" gravcomp="1">
+              <joint name="l_index_j2" class="finger_joint" axis="1 0 0" range="0.0 1.6"/>
+              <geom class="finger_geom" fromto="0 0 0 0 0 -0.045" size="0.0075"/>
+            </body>
+          </body>
+            
+          <body name="l_middle_prox" pos="-0.012 0.045 -0.06" gravcomp="1">
+            <joint name="l_middle_j1" class="finger_joint" axis="1 0 0" range="-1.6 0.0"/>
+            <geom class="finger_geom" fromto="0 0 0 0 0 -0.05" size="0.008"/>
+            <body name="l_middle_dist" pos="0 0 -0.05" gravcomp="1">
+              <joint name="l_middle_j2" class="finger_joint" axis="1 0 0" range="0.0 1.6"/>
+              <geom class="finger_geom" fromto="0 0 0 0 0 -0.045" size="0.0075"/>
+            </body>
+          </body>
+            
+          <body name="l_thumb_prox" pos="0.0 -0.045 -0.06" gravcomp="1">
+            <joint name="l_thumb_j1" class="finger_joint" axis="1 0 0" range="0.0 1.6"/>
+            <geom class="finger_geom" fromto="0 0 0 0 0 -0.05" size="0.008"/>
+            <body name="l_thumb_dist" pos="0 0 -0.05" gravcomp="1">
+              <joint name="l_thumb_j2" class="finger_joint" axis="1 0 0" range="-1.6 0.0"/>
+              <geom class="finger_geom" fromto="0 0 0 0 0 -0.045" size="0.0075"/>
+            </body>
+          </body>
+            <site name="l_pinch" pos="0 0 -0.125" size="0.008" rgba="1 0.9 0 0.6"/>
+          </body>
+        </body>
+      </body>
+
+      <body name="r_upper_arm" pos="0 -0.24 0.1" gravcomp="1">
+        <joint name="r_sh_pitch" class="arm_joint" axis="0 1 0" range="-2.8 1.0"/>
+        <joint name="r_sh_roll" class="arm_joint" axis="1 0 0" range="-2.0 1.2"/>
+        <joint name="r_sh_yaw" class="arm_joint" axis="0 0 1" range="-1.5 1.5"/>
+        <geom type="sphere" size="0.045" contype="0" conaffinity="0" rgba="0.35 0.38 0.45 1"/>
+        <geom class="link_geom" fromto="0 0 0 0 0 -0.33" size="0.035"/>
+        <body name="r_forearm" pos="0 0 -0.33" gravcomp="1">
+          <joint name="r_elbow" class="arm_joint" axis="0 1 0" range="-2.4 0.05"/>
+          <geom type="sphere" size="0.038" contype="0" conaffinity="0" rgba="0.35 0.38 0.45 1"/>
+          <geom class="link_geom" fromto="0 0 0 0 0 -0.3" size="0.03"/>
+          <body name="r_hand" pos="0 0 -0.3" gravcomp="1">
+            <joint name="r_wrist_roll" class="wrist_joint" axis="0 0 1" range="-1.6 1.6"/>
+            <joint name="r_wrist_pitch" class="wrist_joint" axis="0 1 0" range="-1.0 1.0"/>
+            <joint name="r_wrist_dev" class="wrist_joint" axis="1 0 0" range="-1.2 1.2"/>
+            <geom name="r_palm" class="link_geom" type="box" pos="0 0 -0.03" size="0.02 0.045 0.03" rgba="0.85 0.7 0.6 1"/>
+            
+          <body name="r_index_prox" pos="0.012 0.045 -0.06" gravcomp="1">
+            <joint name="r_index_j1" class="finger_joint" axis="1 0 0" range="-1.6 0.0"/>
+            <geom class="finger_geom" fromto="0 0 0 0 0 -0.05" size="0.008"/>
+            <body name="r_index_dist" pos="0 0 -0.05" gravcomp="1">
+              <joint name="r_index_j2" class="finger_joint" axis="1 0 0" range="0.0 1.6"/>
+              <geom class="finger_geom" fromto="0 0 0 0 0 -0.045" size="0.0075"/>
+            </body>
+          </body>
+            
+          <body name="r_middle_prox" pos="-0.012 0.045 -0.06" gravcomp="1">
+            <joint name="r_middle_j1" class="finger_joint" axis="1 0 0" range="-1.6 0.0"/>
+            <geom class="finger_geom" fromto="0 0 0 0 0 -0.05" size="0.008"/>
+            <body name="r_middle_dist" pos="0 0 -0.05" gravcomp="1">
+              <joint name="r_middle_j2" class="finger_joint" axis="1 0 0" range="0.0 1.6"/>
+              <geom class="finger_geom" fromto="0 0 0 0 0 -0.045" size="0.0075"/>
+            </body>
+          </body>
+            
+          <body name="r_thumb_prox" pos="0.0 -0.045 -0.06" gravcomp="1">
+            <joint name="r_thumb_j1" class="finger_joint" axis="1 0 0" range="0.0 1.6"/>
+            <geom class="finger_geom" fromto="0 0 0 0 0 -0.05" size="0.008"/>
+            <body name="r_thumb_dist" pos="0 0 -0.05" gravcomp="1">
+              <joint name="r_thumb_j2" class="finger_joint" axis="1 0 0" range="-1.6 0.0"/>
+              <geom class="finger_geom" fromto="0 0 0 0 0 -0.045" size="0.0075"/>
+            </body>
+          </body>
+            <site name="r_pinch" pos="0 0 -0.125" size="0.008" rgba="1 0.9 0 0.6"/>
+          </body>
+        </body>
+      </body>
+    </body>
+
+    <!-- vertical peg on the right side of the table -->
+    <body name="peg" pos="0.40 -0.08 0.861">
+      <freejoint name="peg_free"/>
+      <geom name="peg_geom" type="cylinder" size="0.015 0.06" mass="0.06" rgba="0.9 0.2 0.2 1"
+            friction="1.5 0.05 0.001" condim="4"/>
+    </body>
+
+    <!-- block with a square vertical hole (4 walls, 0.04 m inner width, 0.03 m peg diameter) on the left -->
+    <body name="block" pos="0.40 0.08 0.8410000000000001">
+      <freejoint name="block_free"/>
+      <geom name="wall_xp" type="box" pos="0.02500 0 0" size="0.00500 0.03 0.03" mass="0.0375" rgba="0.2 0.4 0.9 1" friction="1.5 0.05 0.001" condim="4"/>
+      <geom name="wall_xn" type="box" pos="-0.02500 0 0" size="0.00500 0.03 0.03" mass="0.0375" rgba="0.2 0.4 0.9 1" friction="1.5 0.05 0.001" condim="4"/>
+      <geom name="plate" type="box" pos="0 0 -0.035" size="0.03 0.03 0.005" mass="0.03" rgba="0.2 0.4 0.9 1" friction="1.5 0.05 0.001" condim="4"/>
+      <geom name="wall_yp" type="box" pos="0 0.02500 0" size="0.02000 0.00500 0.03" mass="0.0375" rgba="0.2 0.4 0.9 1" friction="1.5 0.05 0.001" condim="4"/>
+      <geom name="wall_yn" type="box" pos="0 -0.02500 0" size="0.02000 0.00500 0.03" mass="0.0375" rgba="0.2 0.4 0.9 1" friction="1.5 0.05 0.001" condim="4"/>
+    </body>
+  </worldbody>
+
+  <equality>
+    <joint joint1="l_index_j2" joint2="l_index_j1" polycoef="0 -1 0 0 0"/>
+    <joint joint1="l_middle_j2" joint2="l_middle_j1" polycoef="0 -1 0 0 0"/>
+    <joint joint1="l_thumb_j2" joint2="l_thumb_j1" polycoef="0 -1 0 0 0"/>
+    <joint joint1="r_index_j2" joint2="r_index_j1" polycoef="0 -1 0 0 0"/>
+    <joint joint1="r_middle_j2" joint2="r_middle_j1" polycoef="0 -1 0 0 0"/>
+    <joint joint1="r_thumb_j2" joint2="r_thumb_j1" polycoef="0 -1 0 0 0"/>
+  </equality>
+
+  <actuator>
+    <position name="head_pan" joint="head_pan" kp="10" kv="1" ctrlrange="-1.2 1.2" forcerange="-10 10"/>
+    <position name="head_tilt" joint="head_tilt" kp="10" kv="1" ctrlrange="-0.6 0.8" forcerange="-10 10"/>
+    <position name="l_sh_pitch" joint="l_sh_pitch" class="shoulder"/>
+    <position name="l_sh_roll" joint="l_sh_roll" class="shoulder"/>
+    <position name="l_sh_yaw" joint="l_sh_yaw" class="shoulder"/>
+    <position name="l_elbow" joint="l_elbow" class="elbow"/>
+    <position name="l_wrist_roll" joint="l_wrist_roll" class="wrist"/>
+    <position name="l_wrist_pitch" joint="l_wrist_pitch" class="wrist"/>
+    <position name="l_wrist_dev" joint="l_wrist_dev" class="wrist"/>
+    <position name="l_index" joint="l_index_j1" class="finger_act" ctrlrange="-1.6 0"/>
+    <position name="l_middle" joint="l_middle_j1" class="finger_act" ctrlrange="-1.6 0"/>
+    <position name="l_thumb" joint="l_thumb_j1" class="thumb_act" ctrlrange="0 1.6"/>
+    <position name="r_sh_pitch" joint="r_sh_pitch" class="shoulder"/>
+    <position name="r_sh_roll" joint="r_sh_roll" class="shoulder"/>
+    <position name="r_sh_yaw" joint="r_sh_yaw" class="shoulder"/>
+    <position name="r_elbow" joint="r_elbow" class="elbow"/>
+    <position name="r_wrist_roll" joint="r_wrist_roll" class="wrist"/>
+    <position name="r_wrist_pitch" joint="r_wrist_pitch" class="wrist"/>
+    <position name="r_wrist_dev" joint="r_wrist_dev" class="wrist"/>
+    <position name="r_index" joint="r_index_j1" class="finger_act" ctrlrange="-1.6 0"/>
+    <position name="r_middle" joint="r_middle_j1" class="finger_act" ctrlrange="-1.6 0"/>
+    <position name="r_thumb" joint="r_thumb_j1" class="thumb_act" ctrlrange="0 1.6"/>
+  </actuator>
+</mujoco>
